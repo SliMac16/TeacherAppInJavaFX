@@ -10,6 +10,7 @@ public class ClassContainer {
 
     ClassContainer() {
         this.teachersGroup = new HashMap<String, ClassTeacher>();
+        System.out.println("New ClassContainer created");
     }
 
     public void addClass(String name, double maxNumber) {

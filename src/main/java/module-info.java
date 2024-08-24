@@ -10,6 +10,7 @@ module com.example.fx3 {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
+    requires java.desktop;
 
     opens com.example.fx3 to javafx.fxml;
     exports com.example.fx3;

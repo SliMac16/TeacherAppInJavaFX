@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="344.0" prefWidth="216.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fx3.Controller">
+   <children>
+      <Button alignment="CENTER" layoutX="83.0" layoutY="55.0" mnemonicParsing="false" onAction="#Create" text="Create" textAlignment="CENTER" textFill="#b30808" />
+      <Button alignment="CENTER" layoutX="85.0" layoutY="129.0" mnemonicParsing="false" text="Show" />
+      <Button alignment="CENTER" layoutX="90.0" layoutY="273.0" mnemonicParsing="false" text="Exit" />
+   </children>
+</AnchorPane>

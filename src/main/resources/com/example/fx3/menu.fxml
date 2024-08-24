@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.fx3.Menu"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="791.0" prefWidth="1047.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fx3.Controller">
+   <children>
+      <TableView layoutX="356.0" layoutY="24.0" prefHeight="622.0" prefWidth="647.0">
+        <columns>
+          <TableColumn prefWidth="149.99996948242188" text="C1" />
+          <TableColumn prefWidth="559.9999847412109" text="C2" />
+        </columns>
+      </TableView>
+      <Button layoutX="38.0" layoutY="49.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="186.0" text="Create Teachers Group" />
+      <Button layoutX="38.0" layoutY="92.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="186.0" text="Create Teacher" />
+   </children>
 </AnchorPane>
