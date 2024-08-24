@@ -14,4 +14,6 @@ module com.example.fx3 {
 
     opens com.example.fx3 to javafx.fxml;
     exports com.example.fx3;
+    exports com.example.fx3.Controllers;
+    opens com.example.fx3.Controllers to javafx.fxml;
 }

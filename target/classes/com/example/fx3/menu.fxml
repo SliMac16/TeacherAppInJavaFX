@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="344.0" prefWidth="216.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fx3.Controller">
+<AnchorPane prefHeight="791.0" prefWidth="1047.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fx3.SceneController">
    <children>
-      <Button alignment="CENTER" layoutX="83.0" layoutY="55.0" mnemonicParsing="false" onAction="#Create" text="Create" textAlignment="CENTER" textFill="#b30808" />
-      <Button alignment="CENTER" layoutX="85.0" layoutY="129.0" mnemonicParsing="false" text="Show" />
-      <Button alignment="CENTER" layoutX="90.0" layoutY="273.0" mnemonicParsing="false" text="Exit" />
+      <TableView layoutX="356.0" layoutY="24.0" prefHeight="622.0" prefWidth="647.0">
+        <columns>
+          <TableColumn prefWidth="149.99996948242188" text="C1" />
+          <TableColumn prefWidth="559.9999847412109" text="C2" />
+        </columns>
+      </TableView>
+      <Button layoutX="38.0" layoutY="49.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="186.0" text="Create Teachers Group" />
+      <Button layoutX="38.0" layoutY="92.0" mnemonicParsing="false" onAction="#openCreateTeacherWindow" prefHeight="31.0" prefWidth="186.0" text="Create Teacher" />
    </children>
 </AnchorPane>
