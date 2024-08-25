@@ -6,17 +6,19 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="425.0" prefWidth="241.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fx3.Controllers.SceneController">
+<AnchorPane prefHeight="450.0" prefWidth="248.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fx3.Controllers.CreateTeacherController">
    <children>
       <Text layoutX="32.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:" wrappingWidth="109.47000122070312" />
-      <TextField layoutX="32.0" layoutY="57.0" prefHeight="25.0" prefWidth="175.0" />
+      <TextField fx:id="tb_Name" layoutX="32.0" layoutY="57.0" prefHeight="25.0" prefWidth="175.0" />
       <Text layoutX="32.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Surname:" wrappingWidth="109.47000122070312" />
-      <TextField id="tf_Name" layoutX="32.0" layoutY="114.0" prefHeight="25.0" prefWidth="175.0" />
+      <TextField id="tf_Name" fx:id="tb_Surname" layoutX="32.0" layoutY="114.0" prefHeight="25.0" prefWidth="175.0" />
       <Text layoutX="32.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="salary:" wrappingWidth="109.47000122070312" />
-      <TextField id="tf_Name" layoutX="32.0" layoutY="256.0" prefHeight="25.0" prefWidth="175.0" />
+      <TextField id="tf_Name" fx:id="tb_Salary" layoutX="32.0" layoutY="256.0" prefHeight="25.0" prefWidth="175.0" />
       <Text layoutX="32.0" layoutY="199.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date of Birth:" wrappingWidth="109.47000122070312" />
-      <DatePicker layoutX="32.0" layoutY="203.0" />
-      <ComboBox layoutX="32.0" layoutY="317.0" prefWidth="150.0" />
+      <DatePicker fx:id="dp_Date" layoutX="32.0" layoutY="203.0" />
+      <ComboBox fx:id="cb_Condition" layoutX="32.0" layoutY="317.0" prefWidth="150.0" />
       <Text layoutX="32.0" layoutY="313.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Condition:" wrappingWidth="109.47000122070312" />
+      <ComboBox fx:id="cb_Group" layoutX="32.0" layoutY="380.0" prefWidth="150.0" />
+      <Text layoutX="32.0" layoutY="376.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Group:" wrappingWidth="109.47000122070312" />
    </children>
 </AnchorPane>
