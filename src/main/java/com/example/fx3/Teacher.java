@@ -7,13 +7,15 @@ public class Teacher implements Comparable<Teacher>{
     int rokUrodzenia;
     double wynagrodzenie;
 
-    Teacher(String I,String n, TeacherCondition tc, int rok, double w){
+    public Teacher(String I,String n, TeacherCondition tc, int rok, double w){
         this.imie = I;
         this.nazwisko = n;
         this.condition = tc;
         this.rokUrodzenia = rok;
         this.wynagrodzenie = w;
     }
+
+
 
     public String getImie(){
         return imie;
