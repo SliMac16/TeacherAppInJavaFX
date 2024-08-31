@@ -7,6 +7,7 @@ import javafx.stage.Stage;
 import javafx.scene.paint.Color;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class Menu extends Application {
 
@@ -22,5 +23,6 @@ public class Menu extends Application {
 
     public static void main(String[] args) {
         launch(args);
+        ArrayList<Teacher> teachers = new ArrayList<>();
     }
 }

@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="532.0" prefWidth="261.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fx3.Controllers.CreateTeacherController">
+<AnchorPane prefHeight="532.0" prefWidth="261.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fx3.CreateTeacherController">
    <children>
       <Text layoutX="32.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:" wrappingWidth="109.47000122070312" />
       <TextField fx:id="tb_Name" layoutX="32.0" layoutY="57.0" prefHeight="25.0" prefWidth="175.0" />
@@ -19,7 +19,7 @@
       <Text layoutX="32.0" layoutY="313.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Condition:" wrappingWidth="109.47000122070312" />
       <ComboBox fx:id="cb_Group" layoutX="32.0" layoutY="380.0" prefWidth="150.0" />
       <Text layoutX="32.0" layoutY="376.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Group:" wrappingWidth="109.47000122070312" />
-      <Button fx:id="Bt_CreateTeacher" layoutX="105.0" layoutY="446.0" mnemonicParsing="false" text="Create" AnchorPane.bottomAnchor="60.66666666666667" />
+      <Button fx:id="Bt_CreateTeacher" layoutX="105.0" layoutY="446.0" mnemonicParsing="false" onAction="#ButtonPressed" onKeyPressed="#ButtonPressed" text="Create" AnchorPane.bottomAnchor="60.66666666666667" />
       <TextField id="tf_Name" fx:id="tb_yearOfBirth" layoutX="32.0" layoutY="202.0" prefHeight="25.0" prefWidth="175.0" />
    </children>
 </AnchorPane>

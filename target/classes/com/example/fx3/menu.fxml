@@ -13,7 +13,7 @@
           <TableColumn prefWidth="559.9999847412109" text="C2" />
         </columns>
       </TableView>
-      <Button layoutX="38.0" layoutY="49.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="186.0" text="Create Teachers Group" />
+      <Button layoutX="38.0" layoutY="49.0" mnemonicParsing="false" onAction="#switchToScene1" prefHeight="31.0" prefWidth="186.0" text="Create Teachers Group" />
       <Button layoutX="38.0" layoutY="92.0" mnemonicParsing="false" onAction="#openCreateTeacherWindow" prefHeight="31.0" prefWidth="186.0" text="Create Teacher" />
    </children>
 </AnchorPane>
