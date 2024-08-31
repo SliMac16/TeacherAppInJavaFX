@@ -6,11 +6,24 @@ import java.util.Map;
 
 public class ClassContainer {
 
+    private static ClassContainer instance;
+
     Map<String, ClassTeacher> teachersGroup;
 
-    ClassContainer() {
-        this.teachersGroup = new HashMap<String, ClassTeacher>();
-        System.out.println("New ClassContainer created");
+    private ClassContainer() {
+        this.teachersGroup = new HashMap<>();
+        System.out.println("New ClassContainer");
+    }
+
+    public static ClassContainer getInstance() {
+        if (instance == null) {
+            synchronized (ClassContainer.class) {
+                if (instance == null) {
+                    instance = new ClassContainer();
+                }
+            }
+        }
+        return instance;
     }
 
     public void addClass(String name, double maxNumber) {
