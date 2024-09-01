@@ -18,6 +18,9 @@ public class CreateTeacherController {
     private ComboBox<TeacherCondition> cb_Condition;
 
     @FXML
+    private ComboBox<String> cb_Group;
+
+    @FXML
     private TextField tb_yearOfBirth;
 
     @FXML
@@ -35,6 +38,7 @@ public class CreateTeacherController {
     @FXML
     public void initialize() {
         cb_Condition.getItems().addAll(TeacherCondition.values());
+        cb_Group.getItems().addAll(ClassContainer.getInstance().getTeachersGroup());
     }
 
     @FXML
@@ -43,9 +47,12 @@ public class CreateTeacherController {
             if(tb_Salary.getText().isEmpty() || tb_Surname.getText().isEmpty() || tb_Name.getText().isEmpty() || cb_Condition.getValue() == null || tb_yearOfBirth.getText().isEmpty() && CheckYearNumber(tb_yearOfBirth.getText())){
                 return;
             }
+            if(ClassContainer.getInstance().getCount() <= 0){
+                return;
+            }
             Teacher t = new Teacher(tb_Name.getText(), tb_Surname.getText(), (TeacherCondition) cb_Condition.getValue(), Integer.parseInt(tb_yearOfBirth.getText()), Integer.parseInt(tb_Salary.getText()));
 
-
+            ClassContainer.getInstance().getClassTeacher(cb_Group.getValue()).addTeacher(t);
 
     }
 

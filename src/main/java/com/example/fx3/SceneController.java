@@ -1,32 +1,57 @@
 package com.example.fx3;
 
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Optional;
 
 public class SceneController {
     private Stage stage;
     private Scene scene;
     private Parent root;
 
+    @FXML
+    private TableView<String> TV_main;
 
-    public void switchToScene1(ActionEvent event) throws IOException {
-        try {
-            root = FXMLLoader.load(getClass().getResource("ListView.fxml"));
-            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
+    @FXML
+    private TableColumn<?, ?> tbColumn1;
+
+    @FXML
+    private TableColumn<?, ?> tbColumn2;
+
+    @FXML
+    void Refresh(){
+        if(ClassContainer.getInstance() == null){
+            return;
         }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
+        TV_main.getItems().addAll(FXCollections.observableList(ClassContainer.getInstance().getTeachersGroup()));
+    }
+
+    @FXML
+    private void handleCreateClassTeacher(ActionEvent event) {
+        // Tworzenie i wyświetlanie dialogu
+        ClassTeacherDialog dialog = new ClassTeacherDialog();
+        Optional<ClassTeacher> result = dialog.showAndWait();
+
+        // Przetwarzanie wyniku
+        result.ifPresent(classTeacher -> {
+            // Pobieranie instancji ClassContainer
+            ClassContainer container = ClassContainer.getInstance();
+
+            // Dodanie nowego ClassTeacher do ClassContainer
+            container.addClass(classTeacher.groupName, classTeacher.getMaxNumber());
+
+            System.out.println("Added ClassTeacher: " + classTeacher.groupName + " to ClassContainer");
+        });
     }
 
     public void switchToScene2(ActionEvent event) throws IOException {

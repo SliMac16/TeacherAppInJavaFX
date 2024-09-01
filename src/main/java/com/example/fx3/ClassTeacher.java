@@ -35,6 +35,7 @@ public class ClassTeacher {
         return;
     }
         TeachersList.add(teacher);
+        System.out.println("Nauczyciel został dodany" + teacher.getImie() + " " + teacher.getNazwisko());
     }
     private void Error(){
         System.out.println("Nauczyciel nie istnieje");
