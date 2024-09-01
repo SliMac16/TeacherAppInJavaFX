@@ -1,6 +1,7 @@
 package com.example.fx3;
 
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -20,20 +21,27 @@ public class SceneController {
     private Parent root;
 
     @FXML
-    private TableView<String> TV_main;
+    private TableView<ClassTeacher> TV_main;
 
     @FXML
-    private TableColumn<?, ?> tbColumn1;
+    private TableColumn<ClassTeacher, ?> tbColumn1;
 
     @FXML
     private TableColumn<?, ?> tbColumn2;
+
+    @FXML
+    public void initialize(){
+        ClassContainer container = ClassContainer.getInstance();
+        ObservableList<ClassTeacher> data = FXCollections.observableArrayList(container.getTeachersGroupMap().values());
+        TV_main.setItems(data);
+    }
 
     @FXML
     void Refresh(){
         if(ClassContainer.getInstance() == null){
             return;
         }
-        TV_main.getItems().addAll(FXCollections.observableList(ClassContainer.getInstance().getTeachersGroup()));
+        //TV_main.getItems().addAll(FXCollections.observableList(ClassContainer.getInstance().getTeachersGroup()));
     }
 
     @FXML

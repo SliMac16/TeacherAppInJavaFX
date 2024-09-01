@@ -70,6 +70,10 @@ public class ClassContainer {
         return teachersGroupNames;
     }
 
+    public Map<String, ClassTeacher> getTeachersGroupMap() {
+        return teachersGroup;
+    }
+
     public ClassTeacher getClassTeacher(String nazwa) {
         return teachersGroup.get(nazwa);
     }
