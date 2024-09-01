@@ -1,5 +1,6 @@
 package com.example.fx3;
 
+import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -10,6 +11,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -24,16 +26,37 @@ public class SceneController {
     private TableView<ClassTeacher> TV_main;
 
     @FXML
-    private TableColumn<ClassTeacher, ?> tbColumn1;
+    private TableColumn<ClassTeacher, String> tbColumn1;
 
     @FXML
-    private TableColumn<?, ?> tbColumn2;
+    void initialize() {
+        // Configure the first column to display the group name
+        tbColumn1.setCellValueFactory(new PropertyValueFactory<>("groupName"));
 
-    @FXML
-    public void initialize(){
-        ClassContainer container = ClassContainer.getInstance();
-        ObservableList<ClassTeacher> data = FXCollections.observableArrayList(container.getTeachersGroupMap().values());
-        TV_main.setItems(data);
+        loadClassData();
+
+       TV_main.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+           if(newValue != null) {
+               openClassTeacherDetailsWindow(newValue);
+           }
+       });
+    }
+
+    private void openClassTeacherDetailsWindow(ClassTeacher selectedClassTeacher) {
+        try {
+            // Załaduj plik FXML dla nowego okna
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("ClassTeacherDetails.fxml"));
+            Parent root = loader.load();
+
+            // Stwórz nowe okno (Stage)
+            Stage stage = new Stage();
+            stage.setTitle("ClassTeacher Details");
+            stage.setScene(new Scene(root));
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
@@ -41,6 +64,9 @@ public class SceneController {
         if(ClassContainer.getInstance() == null){
             return;
         }
+        ClassContainer container = ClassContainer.getInstance();
+        ObservableList<ClassTeacher> data = FXCollections.observableArrayList(container.getTeachersGroupMap().values());
+        TV_main.setItems(data);
         //TV_main.getItems().addAll(FXCollections.observableList(ClassContainer.getInstance().getTeachersGroup()));
     }
 
@@ -82,5 +108,9 @@ public class SceneController {
         }
     }
 
-
+    private void loadClassData(){
+        ClassContainer container = ClassContainer.getInstance();
+        ObservableList<ClassTeacher> data = FXCollections.observableArrayList(container.getTeachersGroupMap().values());
+        TV_main.setItems(data);
+    }
 }

@@ -55,6 +55,8 @@ public class ClassTeacher {
         return maxNumber;
     }
 
+    public String getGroupName(){ return groupName; }
+
     public void removeTeacher(Teacher teacher){
         if(TeachersList.contains(teacher)){
             TeachersList.remove(teacher);
@@ -124,6 +126,7 @@ public class ClassTeacher {
         return Collections.max(TeachersList, Comparator.comparingDouble(Teacher::getWynagrodzenie));
     }
 
-
-
+    public ArrayList<Teacher> getTeachersList() {
+        return TeachersList;
+    }
 }
