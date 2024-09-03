@@ -56,6 +56,7 @@ public class ClassTeacherDetailsController {
         // Załaduj nauczycieli do TableView
         teachersTableView.setItems(FXCollections.observableArrayList(classTeacher.getTeachersList()));
 
+
         System.out.println("Liczba nauczycieli w grupie: " + classTeacher.getTeachersList().size());
     }
 }

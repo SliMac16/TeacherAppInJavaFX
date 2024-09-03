@@ -48,11 +48,15 @@ public class SceneController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("ClassTeacherDetails.fxml"));
             Parent root = loader.load();
 
+            ClassTeacherDetailsController controller = loader.getController();
+            controller.setClassTeacher(selectedClassTeacher);
+
             // Stwórz nowe okno (Stage)
             Stage stage = new Stage();
             stage.setTitle("ClassTeacher Details");
             stage.setScene(new Scene(root));
             stage.show();
+
 
         } catch (IOException e) {
             e.printStackTrace();

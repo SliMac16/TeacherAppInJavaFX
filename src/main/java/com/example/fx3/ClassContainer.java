@@ -71,7 +71,7 @@ public class ClassContainer {
     }
 
     public Map<String, ClassTeacher> getTeachersGroupMap() {
-        return teachersGroup;
+        return this.teachersGroup;
     }
 
     public ClassTeacher getClassTeacher(String nazwa) {
